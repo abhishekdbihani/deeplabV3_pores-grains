@@ -46,7 +46,7 @@ parser.add_argument('--output_stride', type=int, default=16,
 parser.add_argument('--debug', action='store_true',
                     help='Whether to use debugger to track down bad values during training.')
 
-_NUM_CLASSES = 21
+_NUM_CLASSES = 3
 
 
 def main(unused_argv):
@@ -59,7 +59,7 @@ def main(unused_argv):
     pred_hooks = [debug_hook]
 
   model = tf.estimator.Estimator(
-      model_fn=deeplab_model.deeplabv3_model_fn,
+      model_fn=deeplab_model.deeplabv3_plus_model_fn,
       model_dir=FLAGS.model_dir,
       params={
           'output_stride': FLAGS.output_stride,

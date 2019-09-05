@@ -1,4 +1,4 @@
-"""Train a DeepLab v3 model using tf.estimator API."""
+"""Train a DeepLab v3 plus model using tf.estimator API."""
 
 from __future__ import absolute_import
 from __future__ import division
@@ -35,17 +35,17 @@ parser.add_argument('--train_epochs', type=int, default=26,
 parser.add_argument('--epochs_per_eval', type=int, default=1,
                     help='The number of training epochs to run between evaluations.')
 
-parser.add_argument('--tensorboard_images_max_outputs', type=int, default=6,
+parser.add_argument('--tensorboard_images_max_outputs', type=int, default=4,
                     help='Max number of batch elements to generate for Tensorboard.')
 
-parser.add_argument('--batch_size', type=int, default=10,
+parser.add_argument('--batch_size', type=int, default=4,
                     help='Number of examples per batch.')
 
 parser.add_argument('--learning_rate_policy', type=str, default='poly',
                     choices=['poly', 'piecewise'],
                     help='Learning rate policy to optimize loss.')
 
-parser.add_argument('--max_iter', type=int, default=30000,
+parser.add_argument('--max_iter', type=int, default=10000,
                     help='Number of maximum iteration used for "poly" learning rate policy.')
 
 parser.add_argument('--data_dir', type=str, default='./dataset/',
@@ -80,9 +80,9 @@ parser.add_argument('--weight_decay', type=float, default=2e-4,
 parser.add_argument('--debug', action='store_true',
                     help='Whether to use debugger to track down bad values during training.')
 
-_NUM_CLASSES = 21
-_HEIGHT = 513
-_WIDTH = 513
+_NUM_CLASSES = 3
+_HEIGHT = 510
+_WIDTH = 437
 _DEPTH = 3
 _MIN_SCALE = 0.5
 _MAX_SCALE = 2.0
@@ -94,8 +94,8 @@ _MOMENTUM = 0.9
 _BATCH_NORM_DECAY = 0.9997
 
 _NUM_IMAGES = {
-    'train': 10582,
-    'validation': 1449,
+    'train': 1245,
+    'validation': 222,
 }
 
 
@@ -220,7 +220,7 @@ def main(unused_argv):
   # Set up a RunConfig to only save checkpoints once per training cycle.
   run_config = tf.estimator.RunConfig().replace(save_checkpoints_secs=1e9)
   model = tf.estimator.Estimator(
-      model_fn=deeplab_model.deeplabv3_model_fn,
+      model_fn=deeplab_model.deeplabv3_plus_model_fn,
       model_dir=FLAGS.model_dir,
       config=run_config,
       params={
@@ -280,6 +280,6 @@ def main(unused_argv):
 
 
 if __name__ == '__main__':
-  tf.logging.set_verbosity(tf.logging.INFO)
-  FLAGS, unparsed = parser.parse_known_args()
-  tf.app.run(main=main, argv=[sys.argv[0]] + unparsed)
+	 tf.logging.set_verbosity(tf.logging.INFO)
+	 FLAGS, unparsed = parser.parse_known_args()
+	 tf.app.run(main=main, argv=[sys.argv[0]] + unparsed)
