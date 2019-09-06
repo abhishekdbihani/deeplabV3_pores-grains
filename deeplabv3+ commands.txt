@@ -1,0 +1,21 @@
+python create_pascal_tf_record.py --data_dir="C:/deeplearning/tensorflow-deeplab-v3-plus/dataset/PORE/dataset"
+                                  --image_data_dir="C:/deeplearning/tensorflow-deeplab-v3-plus/dataset/PORE/dataset/JPEGImages"
+                                  --label_data_dir="C:/deeplearning/tensorflow-deeplab-v3-plus/dataset/PORE/dataset/SegmentationClassRaw"
+								  --train_data_list="C:/deeplearning/tensorflow-deeplab-v3-plus/dataset/PORE/dataset/ImageSets/train.txt"
+								  --valid_data_list="C:/deeplearning/tensorflow-deeplab-v3-plus/dataset/PORE/dataset/ImageSets/val.txt"
+								  --output_path="C:/deeplearning/tensorflow-deeplab-v3-plus/dataset/PORE/tfrecord"
+								  
+								  
+python create_pascal_tf_record.py --data_dir="C:\deeplearning\tensorflow-deeplab-v3-plus\dataset\PORE\dataset" --image_data_dir="C:\deeplearning\tensorflow-deeplab-v3-plus\dataset\PORE\dataset\JPEGImages" --label_data_dir="C:\deeplearning\tensorflow-deeplab-v3-plus\dataset\PORE\dataset\SegmentationClassRaw" --train_data_list="C:\deeplearning\tensorflow-deeplab-v3-plus\dataset\PORE\dataset\ImageSets\train.txt" --valid_data_list="C:\deeplearning\tensorflow-deeplab-v3-plus\dataset\PORE\dataset\ImageSets\val.txt" --output_path="C:\deeplearning\tensorflow-deeplab-v3-plus\dataset\PORE\tfrecord"			
+
+python train.py --train_epochs 50 --model_dir="C:/deeplearning/tensorflow-deeplab-v3-plus/dataset/PORE/exp/model" --pre_trained_model="C:/deeplearning/tensorflow-deeplab-v3-plus/resnet_v2_101_2017_04_14/resnet_v2_101.ckpt"	
+
+python evaluate.py --model_dir="C:\deeplearning\tensorflow-deeplab-v3-plus\dataset\PORE\exp\model"	--image_data_dir="C:\deeplearning\tensorflow-deeplab-v3-plus\dataset\PORE\dataset\JPEGImages" --label_data_dir="C:\deeplearning\tensorflow-deeplab-v3-plus\dataset\PORE\dataset\SegmentationClassRaw" --evaluation_data_list="C:\deeplearning\tensorflow-deeplab-v3-plus\dataset\PORE\dataset\ImageSets\val.txt"	
+
+python evaluate.py --image_data_dir="C:\deeplearning\tensorflow-deeplab-v3-plus\dataset\PORE\dataset\JPEGImages" --label_data_dir="C:\deeplearning\tensorflow-deeplab-v3-plus\dataset\PORE\dataset\SegmentationClassRaw" --evaluation_data_list="C:\deeplearning\tensorflow-deeplab-v3-plus\dataset\PORE\dataset\ImageSets\val.txt"
+
+tensorboard --logdir="C:/deeplearning/tensorflow-deeplab-v3-plus/dataset/PORE/exp/model"
+
+python inference.py --data_dir="C:\deeplearning\tensorflow-deeplab-v3-plus\dataset\PORE\dataset\JPEGImages" --infer_data_list="C:\deeplearning\tensorflow-deeplab-v3-plus\dataset\PORE\dataset\ImageSets\train.txt" --output_dir="C:\deeplearning\tensorflow-deeplab-v3-plus\dataset\PORE\dataset\output" 
+
+		  
