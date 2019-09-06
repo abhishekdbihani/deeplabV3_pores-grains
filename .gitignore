@@ -104,11 +104,11 @@ ENV/
 .idea
 
 # dataset
-dataset/VOCdevkit
-ini_checkpoints
-model
-*.record
-models
-dataset/inference_output/
-.DS_Store
-dataset/export_output
+#dataset/VOCdevkit
+#ini_checkpoints
+#model
+#*.record
+#models
+#dataset/inference_output/
+#.DS_Store
+#dataset/export_output
