@@ -5,7 +5,7 @@ This repository contains a model of [DeeplabV3+ Model](https://arxiv.org/abs/180
 ## Acknowledgment
 It has been modified from https://github.com/rishizek/tensorflow-deeplab-v3-plus which was made for segmentation of [PASCAL VOC dataset](http://host.robots.ox.ac.uk/pascal/VOC/)
 
-Note: It was not directly forked as size of the trained model files required [LTS](https://git-lfs.github.com/) , which is not supported for forked public repositories.
+Note: It was not directly forked as size of the trained model files required [LTS](https://git-lfs.github.com/) , which is not supported for forked public repositories. The authors are grateful to https://github.com/anuragbihani for his assistance.
 
 ## Description
 This trained model can be used for detection of pores (green) and large i.e. silt size grains (red) from SEM images of shales or mudrocks. An example is shown in the below image. The original dataset can be found here: https://www.digitalrocksportal.org/projects/42
