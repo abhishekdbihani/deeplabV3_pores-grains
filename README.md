@@ -17,7 +17,7 @@ Figure shows the overlay mask of ground truth data (A) and predictions (B) on th
 # Workflow
 
 ## 1) Dataset creation: 
-The images ([raw](https://github.com/abhishekdbihani/deeplabV3_pores-grains/tree/master/dataset/data/JPEGImages) + [label/ground truth](https://github.com/abhishekdbihani/deeplabV3_pores-grains/tree/master/dataset/data/SegmentationClassRaw)) need to be converted to TensorFlow TFRecords before conducting training. The images were split randomly into [training and validation datasets](https://github.com/abhishekdbihani/deeplabV3_pores-grains/tree/master/dataset/data/ImageSets) in a ratio 85:15.
+The images ([raw](https://github.com/abhishekdbihani/deeplabV3_pores-grains/tree/master/dataset/data/JPEGImages) + [label/ground truth](https://github.com/abhishekdbihani/deeplabV3_pores-grains/tree/master/dataset/data/SegmentationClassRaw)) need to be converted to TensorFlow TFRecords before conducting training. The images were split randomly into [training, validation and test datasets](https://github.com/abhishekdbihani/deeplabV3_pores-grains/tree/master/dataset/data) in a ratio 80:15:5.
 
 Command:
 ```bash
@@ -49,10 +49,10 @@ The model was trained on the images using a NVIDIA GeForce GTX 1070 GPU with 8 G
 The model was evaluated for Intersection over Union (IoU) of different classes (pores and large grains) with following results:
 
 
-| Mean IoU values  | Training | Validation | 
-|:----------------:|:--------:|:----------:|
-| Silt grains      |  0.6807  |  0.5556    |
-| Pores            |  0.6394  |  0.6148    |   
+| Mean IoU values  | Training | Validation |  Test  |
+|:----------------:|:--------:|:----------:|:-------:
+| Silt grains      |  0.6807  |  0.5556    | 0.5732
+| Pores            |  0.6394  |  0.6148    | 0.6229  
 
 Command:
 
@@ -61,7 +61,8 @@ python evaluate.py --help
 ```
 
 ## 4) Inference:
-The trained model can be used for segmentation of any SEM mudrock images.
+The trained model can be used for segmentation of any SEM mudrock images. The dataset used to test our model is located [here](https://github.com/abhishekdbihani/deeplabV3_pores-grains/tree/master/dataset/data/JPEG_test).
+
 Command:
 ```bash
 python inference.py --data_dir DATA_DIR --infer_data_list INFER_DATA_LIST --model_dir MODEL_DIR 
