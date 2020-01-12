@@ -75,7 +75,7 @@ python evaluate.py --help
 ```
 
 ## 5) Inference:
-The trained model can be used for segmentation of any SEM mudrock images. The results of segmentation on test data by the trained model are available [here](https://github.com/abhishekdbihani/deeplabV3_pores-grains/tree/master/dataset/data/output) and the comparison of the results of of ground truth data and predictions using overlay masks are available [here](https://github.com/abhishekdbihani/deeplabV3_pores-grains/tree/master/dataset/data/masks). 
+The trained model can be used for segmentation of any SEM mudrock images. The results of segmentation on test data by the trained model are available [here](https://github.com/abhishekdbihani/deeplabV3_pores-grains/tree/master/dataset/data/output_test) and the comparison of the results of of ground truth data and predictions using overlay masks are available [here](https://github.com/abhishekdbihani/deeplabV3_pores-grains/tree/master/dataset/data/masks_test). 
 
 Command:
 ```bash
