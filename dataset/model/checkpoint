@@ -1,3 +1,3 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:76a3a6d2865ac0f8246c6bcc7a7618b44e2be61bcf841f6db870b7d0ec328092
-size 90
+model_checkpoint_path: "model.ckpt-16605"
+all_model_checkpoint_paths: "model.ckpt-16605"
+
