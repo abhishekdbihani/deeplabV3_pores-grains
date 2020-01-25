@@ -88,6 +88,6 @@ Bihani A., Daigle H., Santos J. E., Landry C., Prodanovic M., Milliken K. Semant
 
 ## Author publications:
 
-1) Bihani A., Daigle H., Santos J. E., Landry C., Prodanovic M., Milliken K. (2019). Insight into the Sealing Capacity of Mudrocks determined using a Digital Rock Physics Workflow. TACC Symposium for Texas Researchers (TACCSTER), 26-27 September, Austin, TX, USA. 
+1) Bihani A., Daigle H., Santos J. E., Landry C., Prodanovic M., Milliken K. (2019). Insight into the Sealing Capacity of Mudrocks determined using a Digital Rock Physics Workflow. TACC Symposium for Texas Researchers (TACCSTER), 26-27 September, Austin, TX, USA. http://dx.doi.org/10.26153/tsw/6874
 
-2) Bihani A., Daigle H., Santos J., Landry C., Prodanović M., Milliken K. (2019). H44B-06: Insight into the Sealing Capacity of Mudrocks determined using a Digital Rock Physics Workflow. AGU Fall Meeting, 9-13 December, San Francisco, USA.
+2) Bihani A., Daigle H., Santos J., Landry C., Prodanović M., Milliken K. (2019). H44B-06: Insight into the Sealing Capacity of Mudrocks determined using a Digital Rock Physics Workflow. AGU Fall Meeting, 9-13 December, San Francisco, USA. https://agu.confex.com/agu/fm19/meetingapp.cgi/Paper/557690
