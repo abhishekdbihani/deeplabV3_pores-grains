@@ -5,11 +5,11 @@ This repository contains a model of [DeeplabV3+ Model](https://arxiv.org/abs/180
 The repository was created by Abhishek Bihani in collaboration with Hugh Daigle, Javier E. Santos, Christopher Landry, Masa Prodanovic and Kitty Milliken.
 
 ## Description
-The trained model can be used for detection of pores (green) and large i.e. silt size grains (red) from SEM images of shales or mudrocks. An example is shown in the below image. The original dataset can be found here: https://www.digitalrocksportal.org/projects/42
+The trained model can be used for detection of pores (green) and large i.e. silt size grains (red) from SEM images of shales or mudrocks. An example is shown in the below image. The original dataset can be found here: https://www.digitalrocksportal.org/projects/42 and with the ground truth data (segmented images) here:https://www.digitalrocksportal.org/projects/259
 
-<img src="https://github.com/abhishekdbihani/deeplabV3_pores-grains/blob/master/images/sem_sample1.1.png" align="middle" width="800" height="400" alt="SEM image: pores and grains" >
+<img src="https://github.com/abhishekdbihani/deeplabV3_pores-grains/blob/master/images/sem_sample1.1.png" align="middle" width="800" height="900" alt="SEM image: pores and grains" >
 
-Figure shows the overlay mask of ground truth data (A) and predictions (B) on the SEM images with silt grains in red and pores in green with the image grain Intersection over Union (IoU) equal to 0.89 and pore IoU equal to 0.69.
+Figure shows the overlay mask of ground truth data (A), Deeplab-v3+ model predictions (B), and trainable Weka model predictions in ImageJ (C), on four selected SEM images from the test set. The silt grains are in red, pores in green, clay in transparent/purple color, and the truth images show a scale bar for reference. 
 
 ## Acknowledgments
 1) The workflow has been modified from https://github.com/rishizek/tensorflow-deeplab-v3-plus which was made for segmentation of [PASCAL VOC dataset](http://host.robots.ox.ac.uk/pascal/VOC/).
@@ -42,7 +42,7 @@ python create_pascal_tf_record.py --data_dir DATA_DIR \
 Ready TFRecords of training and evaluation datasets are located [here](https://github.com/abhishekdbihani/deeplabV3_pores-grains/tree/master/dataset/tfrecord).
 
 ## 3) Training: 
-The model was trained by using a pre-trained checkpoint such as a pre-trained [Resnet v2 model](http://download.tensorflow.org/models/resnet_v2_101_2017_04_14.tar.gz) used here. The final trained model checkpoint files are located [here](https://github.com/abhishekdbihani/deeplabV3_pores-grains/tree/master/dataset/model).
+The model was trained by using a pre-trained checkpoint such as a pre-trained [Resnet101 v2 model](http://download.tensorflow.org/models/resnet_v2_101_2017_04_14.tar.gz) used here. The final trained model checkpoint files are located [here](https://github.com/abhishekdbihani/deeplabV3_pores-grains/tree/master/dataset/model).
 
 Command:
 ```bash
@@ -57,7 +57,7 @@ tensorboard --logdir MODEL_DIR
 The metrics for training and validation are seen below:
 <img src="https://github.com/abhishekdbihani/deeplabV3_pores-grains/blob/master/images/deeplab_metrics1.png" align="middle" width="600" height="400" alt="SEM image model: metrics" >
 
-The model was trained on the images using a NVIDIA GeForce GTX 1070 GPU with 8 GB memory. The network was fully trained after 45 epochs, once the training and validation loss became constant (values 18.89 and 18.97 respectively), and the training and validation pixel-accuracy reached a plateau (values 0.9418 and 0.9089 respectively).
+The model was trained on the images using a NVIDIA GeForce GTX 1070 GPU with 8 GB memory. The network was fully trained after 40 epochs, once the training and validation loss became constant (values 18.89 and 18.97 respectively), and the training and validation pixel-accuracy reached a plateau (values 0.9418 and 0.9089 respectively).
 
 ## 4) Evaluation:
 The model was evaluated for IoU of different classes (pores and large grains) with following results:
@@ -65,8 +65,8 @@ The model was evaluated for IoU of different classes (pores and large grains) wi
 
 | Mean IoU values  | Training | Validation |  Test  |
 |:----------------:|:--------:|:----------:|:-------:
-| Silt grains      |  0.6626  |  0.5669    | 0.5308
-| Pores            |  0.6725  |  0.6806    | 0.6551  
+| Silt grains      |  0.7927  |  0.6041    | 0.6430
+| Pores            |  0.7072  |  0.6914    | 0.6907  
 
 Command:
 
@@ -81,6 +81,8 @@ Command:
 ```bash
 python inference.py --data_dir DATA_DIR --infer_data_list INFER_DATA_LIST --model_dir MODEL_DIR 
 ```
+The trainable Weka model using the random forest classifier in ImageJ is uploaded [here](https://github.com/abhishekdbihani/deeplabV3_pores-grains/blob/master/weka_classifier.model) for comparison. It is trained on three classes: silt, pore, clay.
+
 ## Citation:
 
 If you use our model, please cite as:
