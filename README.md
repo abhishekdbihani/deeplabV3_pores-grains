@@ -7,9 +7,9 @@ The repository was created by Abhishek Bihani in collaboration with Hugh Daigle,
 ## Description
 The trained model can be used for detection of pores (green) and large i.e. silt size grains (red) from SEM images of shales or mudrocks. An example is shown in the below image. The original dataset can be found here: https://www.digitalrocksportal.org/projects/42 and with the ground truth data (segmented images) here:https://www.digitalrocksportal.org/projects/259
 
-<img src="https://github.com/abhishekdbihani/deeplabV3_pores-grains/blob/master/images/sem_sample1.1.png" align="middle" width="800" height="900" alt="SEM image: pores and grains" >
+<img src="https://github.com/abhishekdbihani/deeplabV3_pores-grains/blob/master/images/sem_sample1.2.png" align="middle" width="800" height="900" alt="SEM image: pores and grains" >
 
-Figure 1 shows the overlay mask of ground truth data (A), Deeplab-v3+ model predictions (B), and trainable Weka model predictions in ImageJ (C), on four selected SEM images from the test set. The silt grains are in red, pores in green, clay in transparent/purple color, and the truth images show a scale bar for reference. 
+Figure 1 shows the overlay mask of ground truth data (A), Deeplab-v3+ model predictions (B), and trainable Weka model predictions in ImageJ (C), on four selected SEM images from the test set. The silt grains are in red, pores in green, clay in transparent color, and the truth images show a scale bar for reference. 
 
 ## Acknowledgments
 1) The workflow has been modified from https://github.com/rishizek/tensorflow-deeplab-v3-plus which was made for segmentation of [PASCAL VOC dataset](http://host.robots.ox.ac.uk/pascal/VOC/).
@@ -97,7 +97,7 @@ The IoU comparisons with ground truth data for silt and pore values from the Dee
 ## Citation:
 
 If you use our model, please cite as:
-Bihani A., Daigle H., Santos J. E., Landry C., Prodanovic M., Milliken K. Semantic Segmentation of Mudrock SEM Images through Deep learning. Git code (2019).
+Bihani A., Daigle H., Santos J. E., Landry C., Prodanovic M., Milliken K. Semantic Segmentation of Mudrock SEM Images through Deep learning. Git code (2019) https://github.com/abhishekdbihani/deeplabV3_pores-grains.
 
 ## Author publications:
 
