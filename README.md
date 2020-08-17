@@ -55,9 +55,9 @@ Command:
 tensorboard --logdir MODEL_DIR
 ```
 The metrics for training and validation are seen below in Figure 2:
-<img src="https://github.com/abhishekdbihani/deeplabV3_pores-grains/blob/master/images/deeplab_metrics1.png" align="middle" width="600" height="400" alt="SEM image model: metrics" >
+<img src="https://github.com/abhishekdbihani/deeplabV3_pores-grains/blob/master/images/deeplab_metrics1.png" align="middle" width="600" height="900" alt="SEM image model: metrics" >
 
-The model was trained on the images using a NVIDIA GeForce GTX 1070 GPU with 8 GB memory. The network was fully trained after 40 epochs, once the training and validation loss became constant (values 18.89 and 18.97 respectively), and the training and validation pixel-accuracy reached a plateau (values 0.9418 and 0.9089 respectively).
+The model was trained on the images using a NVIDIA GeForce GTX 1070 GPU with 8 GB memory. The training was stopped after 50 epochs, once the training and validation loss became constant (values 13.25 and 13.52 respectively), and the training and validation pixel-accuracy reached a plateau (values 0.9205 and 0.8898 respectively).
 
 ## 4) Evaluation:
 The model was evaluated for intersection over union (IoU) of different classes (pores and large grains) with following results (Table 1):
@@ -65,8 +65,8 @@ The model was evaluated for intersection over union (IoU) of different classes (
 
 | Mean IoU values  | Training | Validation |  Test  |
 |:----------------:|:--------:|:----------:|:-------:
-| Silt grains      |  0.7927  |  0.6041    | 0.6430
-| Pores            |  0.7072  |  0.6914    | 0.6907  
+| Silt grains      |  0.7169  |  0.6443    | 0.6591
+| Pores            |  0.6844  |  0.6744    | 0.6642  
 
 Command:
 
@@ -89,9 +89,9 @@ The IoU comparisons with ground truth data for silt and pore values from the Dee
 |:---------:|:----------:|:---------:|:---------:|:----|
 |Image      | Silt grains| Pores     |Silt grains|Pores|
 |1          | 0.892	     | 0.729     |	0.702    |0.581|
-|2          | 0.740	     | 0.661     |	0.547    |0.414|
-|3          | 0.878	     | 0.753     |	0.620    |0.602|
-|4          | 0.663	     | 0.824     |	0.484    |0.497|
+|2          | 0.822	     | 0.655     |	0.665    |0.667|
+|3          | 0.889	     | 0.667     |	0.578    |0.707|
+|4          | 0.881	     | 0.816     |	0.543    |0.497|
 
 
 ## Citation:
