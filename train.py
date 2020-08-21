@@ -25,7 +25,7 @@ parser.add_argument('--model_dir', type=str, default='./model',
 parser.add_argument('--clean_model_dir', action='store_true',
                     help='Whether to clean up the model directory if present.')
 
-parser.add_argument('--train_epochs', type=int, default=45,
+parser.add_argument('--train_epochs', type=int, default=50,
                     help='Number of training epochs: '
                          'For 30K iteration with batch size 6, train_epoch = 17.01 (= 30K * 6 / 10,582). '
                          'For 30K iteration with batch size 8, train_epoch = 22.68 (= 30K * 8 / 10,582). '
@@ -47,7 +47,7 @@ parser.add_argument('--learning_rate_policy', type=str, default='poly',
                     choices=['poly', 'piecewise'],
                     help='Learning rate policy to optimize loss.')
 
-parser.add_argument('--max_iter', type=int, default=12000,
+parser.add_argument('--max_iter', type=int, default=15000,
                     help='Number of maximum iteration used for "poly" learning rate policy.')
 
 parser.add_argument('--data_dir', type=str, default='./dataset/',
@@ -86,8 +86,8 @@ _NUM_CLASSES = 3
 _HEIGHT = 230
 _WIDTH = 300
 _DEPTH = 3
-_MIN_SCALE = 0.5
-_MAX_SCALE = 1.5
+_MIN_SCALE = 0.7
+_MAX_SCALE = 1.3
 _IGNORE_LABEL = 255
 
 _POWER = 0.9
