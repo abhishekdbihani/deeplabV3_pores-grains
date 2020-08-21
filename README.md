@@ -91,7 +91,7 @@ The IoU comparisons with ground truth data for silt and pore values from the Mud
 ## Citation:
 
 If you use our model, please cite as:
-Bihani A., Daigle H., Santos J. E., Landry C., Prodanovic M., Milliken K. MudrockNet: Semantic Segmentation of Mudrock SEM Images through Deep learning. Git code (2019) https://github.com/abhishekdbihani/deeplabV3_pores-grains.
+Bihani A., Daigle H., Santos J. E., Landry C., Prodanovic M., Milliken K. MudrockNet: Semantic Segmentation of Mudrock SEM Images through Deep learning. Git code (2019) https://github.com/abhishekdbihani/MudrockNet.
 
 ## Author dataset publications:
 
