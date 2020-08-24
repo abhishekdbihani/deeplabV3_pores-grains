@@ -15,7 +15,7 @@ Figure 1 shows the overlay mask of ground truth data (A), MudrockNet model predi
 # Workflow
 
 ## 1) Dataset and MudrockNet model download:
-This repository contains large trained model files which require [LTS](https://git-lfs.github.com/) for downloading. The repository with the trained MudrockNet model and the test images can be downloaded after installing LFS in the folder using following commands. 
+This repository contains large trained model files which require [LFS](https://git-lfs.github.com/) for downloading. The repository with the trained MudrockNet model and the test images can be downloaded after installing LFS in the folder using following commands. 
 
 Command:
 ```bash
@@ -105,4 +105,4 @@ Bihani A., Daigle H., Santos J. E., Landry C., Prodanovic M., Milliken K. Mudroc
 
 2) Samples and data were provided by the Integrated Ocean Drilling Program (IODP). Funding for sample preparation and SEM imaging was provided by a post-expedition award (Milliken, P.I.) from the Consortium for Ocean Leadership.
 
-3) The authors are grateful to https://github.com/anuragbihani for his assistance in creating MudrockNet.
+3) The authors are grateful to [Mr. Anurag Bihani](https://github.com/anuragbihani) for his assistance in creating MudrockNet.
